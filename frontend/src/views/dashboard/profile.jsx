@@ -3,7 +3,7 @@
 
 
 import React, { useState, useEffect } from "react";
-import profileImg from "@/assets/images/profile-pic.jpg";
+import profileImg from "@/assets/images/dummy-profile-img-1.jpg";
 import profileImgBg from "@/assets/images/userProfileBg.png";
 import { useSelector } from "react-redux";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -27,7 +27,7 @@ const Profile = () => {
     return savedProfileData || {
       username: user?.username || "Ritesh Thakur",
       email: user?.email || "thakurritesh8219@gmail.com",
-      mobile: user?.mobile || "+91-8219091039",
+      mobile: user?.mobile || "*****1039",
       role: user?.role || "Full Stack Developer",
       location: user?.location || "Shimla",
       languages: user?.languages || "English Hindi",

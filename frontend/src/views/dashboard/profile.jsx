@@ -3,7 +3,7 @@
 
 
 import React, { useState, useEffect } from "react";
-import profileImg from "@/assets/images/dummy-profile-img-1.jpg";
+import profileImg from "@/assets/images/profile-pic.jpg";
 import profileImgBg from "@/assets/images/userProfileBg.png";
 import { useSelector } from "react-redux";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

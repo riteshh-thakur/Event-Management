@@ -49,11 +49,27 @@ const Login = () => {
     }
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("access_token")) {
-      navigate("/dashboard");
-    }
+   useEffect(() => {
+    const checkAuth = async () => {
+      const token = localStorage.getItem("access_token");
+      if (token) {
+        try {
+          const response = await axios.get(`${import.meta.env.VITE_API_URL}/auth/verify`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+  
+          if (response.status === 200) {
+            navigate("/dashboard");
+          }
+        } catch (error) {
+          localStorage.removeItem("access_token"); // Remove invalid token
+        }
+      }
+    };
+  
+    checkAuth();
   }, []);
+  
   return (
     <div className="w-full h-[100vh] overflow-x-hidden overflow-y-scroll bg-[#f7f7f9] flex  justify-center items-center" style={{scrollbarWidth:'none'}}>
       <div className="relative z-[10] md:w-3/12 w-11/12 rounded-2xl bg-white shadow-lg  flex flex-col justify-center items-center  p-5">

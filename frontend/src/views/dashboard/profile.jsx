@@ -34,15 +34,15 @@ const Profile = () => {
     };
   });
 
-  // Save profile data to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("profileData", JSON.stringify(profileData));
-  }, [profileData]);
+  // // Save profile data to localStorage whenever it changes
+  // useEffect(() => {
+  //   localStorage.setItem("profileData", JSON.stringify(profileData));
+  // }, [profileData]);
 
-  // Save profile image to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("profileImage", profileImage);
-  }, [profileImage]);
+  // // Save profile image to localStorage whenever it changes
+  // useEffect(() => {
+  //   localStorage.setItem("profileImage", profileImage);
+  // }, [profileImage]);
 
   return (
     <div className="w-full px-4 pb-8">
